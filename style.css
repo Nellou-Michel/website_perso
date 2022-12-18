@@ -1,0 +1,327 @@
+@font-face {
+    font-family: 'cut_the_crapregular';
+    src: url('fonts/crap/cut_the_crap-webfont.woff2') format('woff2'),
+         url('fonts/crap/cut_the_crap-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background-color: BLACK;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'cut_the_crapregular' ;
+    font-size: 30vh;
+    transform:rotateX(-45deg) rotateY(15deg) rotateZ(0deg); 
+    position: absolute;
+    color: #f9f90c;
+    user-select: none;
+}
+
+h1 span {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    opacity: 0;
+}
+
+.introTitle1{
+    top: -10vh;
+    left: 20vw;               
+}
+
+.introTitle2{
+    top: 3.5vh;
+    left: 25vw;
+}
+
+.introTitle3{
+    top: 24.8vh;
+    left: 15vw;
+}
+
+.introAnimatedTitle1{
+    animation:  ease-in introAnimation_title1 2.85s,
+    ease-in-out introAnimation_titleColor 2.85s;
+}
+
+.introAnimatedTitle2{
+    animation:  ease-in introAnimation_title2 3.25s,
+                ease-in-out introAnimation_titleColor 3.25s;
+}
+
+.introAnimatedTitle3{
+    animation: ease-in introAnimation_title3 3.17s,
+               ease-in-out introAnimation_titleColor 3.17s;
+}
+
+.fullGlitch {
+   animation: infinite linear animation_fullGlitch 300ms;
+}
+
+.fullGlitch2 {
+    animation: infinite linear animation_fullGlitch 700ms,
+               infinite linear spanShake2 1s;
+ }
+
+ .fullGlitch1 {
+    animation: infinite linear animation_fullGlitch 500ms,
+               infinite linear spanShake1 2s;
+ }
+
+ .shake1{
+    animation : infinite animation_shake1 linear 100ms;
+ }
+ .shake2{
+    animation :infinite animation_shake2 linear 100ms;
+ }
+ .shake3{
+    animation : infinite animation_shake3 ease-out 100ms;
+ }
+
+ .slow_shake1{
+    animation :  animation_shake ease-in-out 1000ms;
+ }
+ .slow_shake2{
+    animation : animation_shake2 ease-in 1000ms;
+ }
+ .slow_shake3{
+    animation :  animation_shake3 ease-out 1000ms;
+ }
+
+#span2_1,#span1_1,#span3_1{
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.05em, -0.0125em);
+    color: rgb(253, 253, 40);
+}
+
+#span2_2,#span1_2,#span3_2{
+    z-index: 1;
+    clip-path: polygon(0 65%, 100% 65%, 100% 75%, 0 75%);
+    transform: translate(0.0325em, 0.025em);
+    color: rgba(255, 255, 80, 9);
+    color: yellow
+}
+
+
+
+
+
+
+/* ========================================ANIMATION===================================================== */
+
+
+    /* =======================INTRO======================= */
+/* animation des couleurs des titres  1*/
+@keyframes introAnimation_titleColor {
+    0%{
+        color: rgb(15, 14, 15);
+    }
+    
+    25%{
+        color: rgb(15, 14, 15);
+    }
+    45%{
+        color: yellow;
+        opacity: 15%;
+    }
+    55%{
+        color: rgb(15, 14, 15);
+    }
+    90%{
+        color: rgb(15, 14, 15);
+        opacity: 25%;
+    }
+    100%{
+        color: yellow;
+        pacity: 100%;
+    }
+}
+
+
+/* animation de "NELLOU" sur titre de l'introduction  1*/
+@keyframes introAnimation_title1 {
+    from {
+        top: 70vh;
+        left: 75vw;
+        font-size: 3vh;
+    }
+    15%{
+        top: 70vh;
+        left: 75vw;
+        font-size: 3vh;
+    }
+
+    to {
+        top: -10vh;
+        left: 20vw;
+    }
+}
+/* animation de "MICHEL'S" sur titre de l'introduction 2*/
+@keyframes introAnimation_title2 {
+    from {
+        top: 72.5vh;
+        left: 75vw;
+        font-size: 3vh;
+    }
+
+    15%{
+        top: 72.5vh;
+        left: 75vw;
+        font-size: 3vh;
+    }
+
+    to {
+        top: 3.5vh;
+        left: 25vw;
+    }
+}
+/* animation de "WEBSITE" sur titre de l'introduction 3*/
+@keyframes introAnimation_title3 {
+    from {
+        top: 75vh;
+        left: 75vw;
+        font-size: 3vh;
+    }
+
+    15%{
+        top: 75vh;
+        left: 75vw;
+        font-size: 3vh;
+    }
+
+    to {
+        top: 24.8vh;
+        left: 15vw;
+    }
+}
+
+
+/*     ==================GLITCH============================== */
+/* animation de l'effet glitch du titre */
+@keyframes animation_fullGlitch {
+    0%{
+        text-shadow: 
+        -0.035em -0.030em 0 #ea5b5bb3,
+        +0.035em -0.035em 0 #58f958b3,
+        +0.015em +0.025em 0 #5252e0b3;
+        opacity: 1;
+    }
+    14%{
+        text-shadow: 
+        -0.015em -0.030em 0 #ea5b5bb3,
+        +0.015em -0.035em 0 #58f958b3,
+        +0.015em +0.025em 0 #5252e0b3;
+    }
+   15%{
+        text-shadow: 
+        0.015em 0.030em 0 #ea5b5bb3,
+        -0.015em 0.035em 0 #58f958b3,
+        -0.015em -0.025em 0 #5252e0b3;
+    }
+    49%{
+        text-shadow: 
+        0.015em 0.050em 0 #ea5b5bb3,
+        -0.015em 0.035em 0 #58f958b3,
+        -0.015em -0.025em 0 #5252e0b3;
+    }
+    50%{
+        text-shadow: 
+        0.015em -0.020em 0 #ea5b5bb3,
+        +0.025em 0.015em 0 #58f958b3,
+        -0.035em -0.025em 0 #5252e0b3;
+    }
+    99%{
+        text-shadow: 
+        0.015em -0.020em 0 #ea5b5bb3,
+        +0.025em 0.015em 0 #58f958b3,
+        -0.035em -0.025em 0 #5252e0b3;
+    }
+    100%{
+        text-shadow: 
+        -0.035em -0.030em 0 #ea5b5bb3,
+        +0.035em -0.035em 0 #58f958b3,
+        +0.015em +0.025em 0 #5252e0b3;
+        opacity: 1;
+    }
+}
+
+
+  /*   =====================SECOUSSE=============================== */
+@keyframes animation_shake1 {
+    0%{
+        top: -9.8vh;
+        left: 19.8vw;    
+    }
+    to{
+        top: -10vh;
+        left: 20vw;
+    }
+}
+@keyframes animation_shake2 {
+    from{
+        top: 3.3vh;
+        left: 24.7vw;    
+    }
+    to{
+        top: 3.5vh;
+        left: 25vw;    
+    }
+}
+@keyframes animation_shake3 {
+    from{
+        
+        top: 24.6vh;
+        left: 14.7vw;   
+    }
+    to{
+        top: 24.8vh;
+        left: 15vw; 
+    }
+}
+
+@keyframes spanShake1 {
+    from{
+        transform: translate(-0.05em, -0.0125em);
+    }
+    49.5% {
+        transform: translate(-0.05em, -0.0125em);
+    }
+    50%{
+        transform: translate(-0.03em, 1em);
+    }
+    50.5%{
+        transform: translate(-0.5em, -0.125em);
+    }
+    51%{
+        transform: translate(-0.05em, -0.0125em);
+    }
+    to{
+        transform: translate(-0.05em, -0.0125em);
+    }
+}
+
+@keyframes spanShake2 {
+    from{
+        transform: translate(0.0325em, 0.025em);
+    }
+    49.5% {
+        transform: translate(0.0325em, 0.025em);
+    }
+    50.5%{
+        transform: translate(0.0825em, 0.025em);
+    }
+    64.5%{
+        transform: translate(0.0825em, 0.025em);
+    }
+    65%{
+        transform: translate(0.0325em, 0.025em);
+    }
+    to{
+        transform: translate(0.0325em, 0.025em);
+    }
+}
