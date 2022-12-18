@@ -39,6 +39,22 @@ var is1Hovered = false;
 var is2Hovered = false;
 var is3Hovered = false;
 
+var scrollIsLessThan600 = true;
+
+
+window.addEventListener("scroll", function() {
+    var scroll = this.window.scrollY;
+    if(scroll <= 600)
+    {
+        scrollIsLessThan600 = true;
+        console.log("DEPASSSSSSSSSSSSSSEEEEEEE")
+    }
+    else
+    {
+        scrollIsLessThan600 = false;
+    }
+});
+
 /* ecoute des hover et mouseout */
 function StartListener() {
 
@@ -115,19 +131,29 @@ function RemoveGlitch3() {
 
 /* FONCTIONS QUI ACTIVE LES GLITCHS */
 function StartGlitch1() {
-    spanGlitch1_1.classList.add('fullGlitch1');
-    spanGlitch1_2.classList.add('fullGlitch2');
-    glitch.classList.add('fullGlitch');
+    if(scrollIsLessThan600 == true)
+    {
+        spanGlitch1_1.classList.add('fullGlitch1');
+        spanGlitch1_2.classList.add('fullGlitch2');
+        glitch.classList.add('fullGlitch');
+    }
 }
 function StartGlitch2() {
-    spanGlitch2_1.classList.add('fullGlitch1');
-    spanGlitch2_2.classList.add('fullGlitch2');
-    glitch2.classList.add('fullGlitch');  
+    if(scrollIsLessThan600 == true)
+    {
+        spanGlitch2_1.classList.add('fullGlitch1');
+        spanGlitch2_2.classList.add('fullGlitch2');
+        glitch2.classList.add('fullGlitch');
+    }  
 }
 function StartGlitch3() {
-    spanGlitch3_1.classList.add('fullGlitch1');
-    spanGlitch3_2.classList.add('fullGlitch2');
-    glitch3.classList.add('fullGlitch');  
+    if(scrollIsLessThan600 == true)
+    {
+        spanGlitch3_1.classList.add('fullGlitch1');
+        spanGlitch3_2.classList.add('fullGlitch2');
+        glitch3.classList.add('fullGlitch');  
+    }
+
 }
 
 /* FONCTION QUI STOP L'INTRO */
@@ -157,14 +183,17 @@ function SetTiming3() {
 }
 
 /* FONCTION QUI ACTIVE LES SHORT GLITCHS */
+
+
 function StartRandomGlitch1(){
-    if(is1Hovered==false){
+    if(is1Hovered==false && scrollIsLessThan600 == true) 
+    {
         StartGlitch1();
         setTimeout(RemoveGlitch1,350);
     }
 }
 function StartRandomGlitch2(){
-    if(is2Hovered==false){
+    if(is2Hovered==false && scrollIsLessThan600 == true){
         StartGlitch2();
         setTimeout(RemoveGlitch2,350);
     }
@@ -173,7 +202,7 @@ function StartRandomGlitch2(){
     }
 }
 function StartRandomGlitch3(){
-    if(is3Hovered==false){
+    if(is3Hovered==false && scrollIsLessThan600 == true){
         StartGlitch3();
         setTimeout(RemoveGlitch3,350);
     }
